@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+form label{
+    padding: 2.5px;
+    margin: 10px;
+}
