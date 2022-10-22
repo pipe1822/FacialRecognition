@@ -1,6 +1,8 @@
 
 let elVideo = document.getElementById('video');
+let contenedorVideo=document.getElementById('contenedor-video')
 console.log(elVideo);
+console.log(contenedorVideo)
 
 navigator.getMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
     
@@ -31,7 +33,7 @@ faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
 
 elVideo.addEventListener(`play`,  ()=>{
     const canvas= faceapi.createCanvasFromMedia(elVideo)
-    document.body.append(canvas)
+   contenedorVideo.append(canvas)
     // el tamaño del canvas 
 const displaySize = { width: elVideo.width, height: elVideo.height }
 faceapi.matchDimensions(canvas, displaySize) 
