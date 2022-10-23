@@ -1,20 +1,55 @@
-let elVideo = document.getElementById('video');
-console.log(elVideo);
+let video = document.getElementById('video');
+let labels = document.getElementsByTagName(`input`)
+let contador=0;
 
-navigator.getMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
+navigator = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
     
     const cargarCamara= () =>{
-        navigator.getMedia (
+        navigator.getUserMedia (
     
     // Restricciones (contraints) *Requerido
     {
     video: true,
     audio: false
     },
-    stream => elVideo.srcObject = stream,
+    stream => video.srcObject = stream,
     console.error
     
     );
     };
 
+    const CreandoCanvas= ()=>{
+        
+        let fotosCt= document.querySelector('.fotos');
+        console.log(fotosCt);
+        let canvas =document.createElement("canvas");
+        canvas.setAttribute("id",`h`+contador)
+
+        fotosCt.appendChild(canvas)
+    }
+    function name(params) {
+        
+    }
+
+    const tomarFoto =()=>{
+        CreandoCanvas();
+        let canvas =document.getElementById(`h`+contador)
+        let ctx= canvas.getContext('2d');
+        ctx.drawImage(video, 0,0, video.videoWidth, video.videoHeight)
+        console.log(canvas);
+        contador++;
+    }
+    document.addEventListener(`click`, function prueba (e){
+        for (let index = 0; index < labels.length; index++) {
+            if (e.target==labels[index]) {
+                tomarFoto();
+            }
+            
+        }
+       
+    })
+
+    
     cargarCamara();
+
+    console.log(contador);
