@@ -1,5 +1,6 @@
 let video = document.getElementById('video');
 let labels = document.getElementsByTagName(`input`)
+let canvas2= document.getElementById(`prueba3`)
 let contador=0;
 
 navigator = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
@@ -21,10 +22,8 @@ navigator = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigato
     const CreandoCanvas= ()=>{
         
         let fotosCt= document.querySelector('.fotos');
-        console.log(fotosCt);
         let canvas =document.createElement("canvas");
         canvas.setAttribute("id",`h`+contador)
-
         fotosCt.appendChild(canvas)
     }
     function name(params) {
@@ -35,7 +34,7 @@ navigator = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigato
         CreandoCanvas();
         let canvas =document.getElementById(`h`+contador)
         let ctx= canvas.getContext('2d');
-        ctx.drawImage(video, 0,0, video.videoWidth, video.videoHeight)
+        ctx.drawImage(video, 0,0, 250, 150)
         console.log(canvas);
         contador++;
     }
