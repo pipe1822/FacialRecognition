@@ -27,6 +27,8 @@ navigator = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigato
         fotosCt.appendChild(canvas)
     }
     function name(params) {
+
+    
         
     }
 
