@@ -43,7 +43,7 @@ faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
 ]).then(cargarCamara)
 
 
-if (strike<4) {
+
 elVideo.addEventListener(`play`,  ()=>{
     const canvas= faceapi.createCanvasFromMedia(elVideo)
    contenedorVideo.append(canvas)
@@ -52,6 +52,7 @@ const displaySize = { width: elVideo.width, height: elVideo.height }
 faceapi.matchDimensions(canvas, displaySize) 
 
 
+    
 setInterval(async()=>{
 const detections = await faceapi.detectAllFaces(elVideo)
 
@@ -61,23 +62,22 @@ if (detections.length<1) {
         alert("Lo sentimos no lo reconocemos en la pantalla") 
         alumnoOut=75
         strike++
+        if (strike>=4) {
+            x[0].classList.add('d-none')
+            location.href="/FinalizandoCurso.html"
+            
+            alumnoOut=0
+        }
     }
 }else if (detections.length>1) {
     alert("Lo siento no pueden haber 2 personas haciendo el curso")
     
 }else{
     alumnoOut=0;
-
 }
 
 
-if (strike>=4) {
-    x[0].classList.add('d-none')
-    location.href="/FinalizandoCurso.html"
-    
-    alumnoOut=0
-    
-}
+
 
 
 const resizedDetections = faceapi.resizeResults(detections, displaySize)
@@ -86,9 +86,8 @@ faceapi.draw.drawDetections(canvas, resizedDetections)
 faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
 faceapi.draw.drawDetections(canvas, resizedDetections)
 });
-
 })
-}
+
 
 
 
@@ -99,6 +98,9 @@ setInterval (()=>{
     ctx.drawImage(elVideo, 0,0, 250, 150)
     console.log(canvas);
     contador++;
+    console.log(strike);
 },60000)
+
+
 
 
