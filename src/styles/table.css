@@ -1,0 +1,51 @@
+thead {
+    background: var(--fondo-2);
+    border-bottom: 3px solid var(--detalles-1);
+    color: var(--detalles-1);
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--detalles-1);
+}
+
+tbody tr:last-child {
+    border-bottom: 0px solid var(--detalles-1);
+}
+
+tbody a {
+    color: var(--detalles-1);
+}
+
+.general-stats p {
+    @apply text-white text-base
+}
+
+.general-stats span {
+    @apply text-gray-500 text-sm
+}
+
+.general-stats p span {
+    @apply ml-1
+}
+
+.general-stats button {
+    color: var(--detalles-1);
+}
+
+.boxs {
+    @apply shadow;
+    background: var(--fondo-2);
+}
+
+table::-webkit-scrollbar {
+    height: 10px;
+}
+
+table::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+table::-webkit-scrollbar-thumb {
+    @apply rounded-md;
+    background-color: var(--fondo-2);
+}

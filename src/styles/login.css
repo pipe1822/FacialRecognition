@@ -1,0 +1,40 @@
+.form-login {
+    width: 450px;
+}
+
+.form-login input {
+    @apply pl-1
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.input:hover,
+.input:focus,
+.input:valid {
+    border-bottom: 2px solid var(--detalles-1);
+}
+
+.input:hover~label,
+.input:focus~label,
+.input:valid~label {
+    color: var(--detalles-1);
+}
+
+input[type=file] {
+    color: black;
+}
+
+input[type=file]:valid {
+    color: var(--detalles-1);
+    border: 2px solid var(--detalles-1);
+}
+
+.logo img {
+    width: 100px;
+}
+
+#button-submit {
+    background: var(--detalles-1) !important;
+}

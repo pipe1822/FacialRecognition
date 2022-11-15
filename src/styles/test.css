@@ -1,0 +1,48 @@
+input[type=radio]:checked~label,
+label:hover {
+    @apply transition-all;
+    color: var(--detalles-1)
+}
+
+input[type=radio] {
+    display: none;
+}
+
+h1 {
+    font-family: titulo;
+    color: var(--detalles-1);
+}
+
+.question {
+    width: 400px;
+}
+
+@media (min-width:1500px) {
+    .question {
+        width: 600px;
+    }
+}
+
+.test button {
+    @apply px-3 py-2 rounded-md text-white opacity-90 transition-all mx-auto flex mb-5;
+    background: var(--detalles-1) !important;
+}
+
+
+.test form {
+    background-color: var(--fondo-1);
+}
+
+li::marker {
+    color: var(--detalles-1);
+}
+
+li {
+    @apply ml-6
+}
+
+.modal-results {
+    width: 400px;
+    height: auto;
+    background: var(--fondo-2);
+}

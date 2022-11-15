@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'general';
+    src: url('../resources/Montserrat_Complete/Fonts/OTF/Montserrat-SemiBold.otf');
+}
+
+@font-face {
+    font-family: 'titulo';
+    src: url('../resources/Montserrat_Complete/Fonts/OTF/Montserrat-ExtraBold.otf');
+}
+
+:root {
+    --fondo-1: #1B262C;
+    --fondo-2: #243239;
+    --detalles-1: #93d9f2;
+    --detalles-2: #112D4E;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply rounded-md;
+    background-color: var(--fondo-2);
+}
+
+* {
+    font-family: general;
+}
+
+body {
+    background: var(--fondo-1);
+}
+
+
+/* D E S A R R O L L O */
+
+.video {
+    width: 1120px;
+    height: 630px;
+}
+
+.buttonLink {
+    @apply px-3 py-2 rounded-md text-white opacity-90 transition-all mx-auto;
+    background: var(--detalles-1) !important;
+}
+
+.bg-p {
+    background: var(--fondo-1);
+}
+
+.bg-p2 {
+    background: var(--fondo-2);
+}
+
+.none {
+    display: none;
+}
+
+.buscador {
+    color: var(--detalles-1);
+}
+
+.color-p {
+    color: var(--detalles-1);
+}
